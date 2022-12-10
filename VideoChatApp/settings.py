@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.get('SECRET_KEY')
+SECRET_KEY = "OURFACE2FACE"
 # print(environ)
 print ('secret key', SECRET_KEY)
 
@@ -80,10 +80,15 @@ WSGI_APPLICATION = "VideoChatApp.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+MONGO_CONNECTION_STRING = config.get('MONGO_CONNECTION_STRING')
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "face2facedb",
+        "HOST": "localhost",
+        "USER": "postgres",
+        "PASSWORD": "gk1126",
     }
 }
 
