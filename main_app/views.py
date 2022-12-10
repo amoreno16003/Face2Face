@@ -61,7 +61,7 @@ def signup_view(request):
         return render(request, 'signup.html', {'form': form})
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def room(request, room):
     username = request.GET.get('username')
