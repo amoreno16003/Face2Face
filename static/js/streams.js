@@ -1,6 +1,6 @@
-const APP_ID = '74db7ea6b53941d5aba1c335903798da'
+const APP_ID = 'f2d8a61a099e45c196cda215293e0b74'
 const CHANNEL = 'main'
-const TOKEN = '007eJxTYHCKXNWzhHdyg9S0CVNPyjOHljZ8PHpSPzB+4wXObqenl9oUGMxNUpLMUxPNkkyNLU0MU0wTkxINk42NTS0NjM0tLVIST0fOTG4IZGTYUjyBiZEBAkF8FobcxMw8BgYAR1EfvQ=='
+const TOKEN = '007eJxTYODdxNSxz+KVRfiHh5Kn6i4duBNkVaBoWMNqKfGYR5BjS48CQ5pRikWimWGigaVlqolpsqGlWXJKopGhqZGlcapBkrnJtDdTkhsCGRku/FFjZWSAQBCfhSE3MTOPgQEA2qoeUg=='
 let UID;
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
@@ -42,7 +42,8 @@ let handleUserJoined = async (user, mediaType) => {
     if (mediaType === 'audio'){
         user.audioTrack.play()
     }
-}
+} 
+
 
 
 joinAndDisplayLocalStream()
