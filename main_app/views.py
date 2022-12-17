@@ -110,29 +110,25 @@ def CreateChatroom(request):
 @login_required
 def CreateMessage(request, chatroom):
     if request.method == 'POST': 
-        # user_id = int(request.POST['user_id'])
-        # chatroom_id = int(request.POST['chatroom_id'])
-        # print('user id here!', request.user, 'chatroom id here!', chatroom_id)
         text = request.POST['text']
         chatroom_name = request.POST['chatroom_name']
-
+        user = request.user
         chatroom = list(Chatroom.objects.filter(name=chatroom))[0]
         new_message = Message.objects.create(sender=request.user, chatroom=chatroom, text=text)
-        print('THIS IS a new Message!!!', new_message.sender)
+        
         new_message.save()
-        return redirect(f'/getMessages/{chatroom_name}')
+        return render(request, 'main_app/message_form.html', {'user': user, 'chatroom': chatroom})
     else: 
         user = request.user
-        print('printing CHATROOM 1', chatroom)
         chatroom = list(Chatroom.objects.filter(name=chatroom))[0]
-        print('printing CHATROOM', chatroom)
         return render(request, 'main_app/message_form.html', {'user': user, 'chatroom': chatroom})
 
 
 
 @login_required
 def getMessages(request, chatroom):
-    room_details = Chatroom.objects.get(name=chatroom)
+        room_details = Chatroom.objects.get(name=chatroom)
+        messages = Message.objects.filter(chatroom=room_details.id)
+        return JsonResponse({"messages":list(messages.values())})
 
-    messages = Message.objects.filter(chatroom=room_details.id)
-    return JsonResponse({"messages":list(messages.values())})
+
