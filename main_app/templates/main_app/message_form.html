@@ -85,7 +85,7 @@
                   response.messages[key].text +
                   "</b><p>" +
                   response.messages[key].sender +
-                  "</br> <span>" +
+                  "</p><span class='time-left'>" +
                   response.messages[key].created_at.slice(0, 10)+
                   "</span></div>";
                 $("#display").append(displayMessage);
