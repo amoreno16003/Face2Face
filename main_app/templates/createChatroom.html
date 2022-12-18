@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block additionalStyles %}
+  <link rel='stylesheet' href="{% static '/styles/createChatroom.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class='chat-create chat-enter'> 
+
+<div class='form'> 
   <form id="post-form" method="POST" action="">
       {% csrf_token %}
       <label>Create a Chatroom or Join an Existing Chatroom</label>
       {% comment %}Need to display existing chatrooms to choose from {% endcomment %}
       <input type="text" name="chatroom" id="chatroom" width="100px" />
-      <input type="submit" value="Create Room Now">
+      <input type="submit" value="Entering the Room">
   </form>
 </div>
 
+<div class="login-box">
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Creating Chatroom</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Existing Chatroom</label>
+    </div>
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Entering...
+    </a>
+  </form>
+</div>
 
 {% endblock %}

@@ -6,9 +6,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Face2Face</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    {% comment %} <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/main.css' %}"> {% endcomment %}
+    {% block additionalStyles %}
+    {% endblock %}
     <link rel='stylesheet' type='text/css' media='screen' href="{% static '/styles/homepage.css' %}">
-    {% comment %} <link rel='stylesheet' type='text/css' href='../static/styles/main.css'> {% endcomment %}
+    
     <script src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
@@ -63,7 +64,6 @@
     
     {% endblock content %}
 </body>
-<!-- <script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.8.0.js' %}"></script> -->
 
 
 </html>

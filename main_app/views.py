@@ -5,6 +5,10 @@ from django.http import HttpResponseRedirect
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 from main_app.models import Chatroom, Message
+from django.forms.models import model_to_dict
+import json
+from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
 
 # Add LoginForm to this line...
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -110,9 +114,6 @@ def CreateChatroom(request):
 @login_required
 def CreateMessage(request, chatroom):
     if request.method == 'POST': 
-        # user_id = int(request.POST['user_id'])
-        # chatroom_id = int(request.POST['chatroom_id'])
-        # print('user id here!', request.user, 'chatroom id here!', chatroom_id)
         text = request.POST['text']
         chatroom_name = request.POST['chatroom_name']
 
@@ -125,18 +126,28 @@ def CreateMessage(request, chatroom):
         return render(request, 'main_app/message_form.html', {'user': user, 'chatroom': chatroom})
     else: 
         user = request.user
-        print('printing CHATROOM 1', chatroom)
+        print('printing user 1', user)
         chatroom = list(Chatroom.objects.filter(name=chatroom))[0]
         print('printing CHATROOM', chatroom)
         return render(request, 'main_app/message_form.html', {'user': user, 'chatroom': chatroom})
 
-
+def add_sender(message):
+    sender = User.objects.get(id=message.sender.id)
+    print('136 This is Sender!', sender.username)
+    return {
+        "sender": sender.username,
+        "text": message.text,
+        "created_at": message.created_at
+    }
 
 
 @login_required
 def getMessages(request, chatroom):
-    
     room_details = Chatroom.objects.get(name=chatroom)
-    messages = Message.objects.filter(chatroom=room_details.id)
-    return JsonResponse({"messages":list(messages.values())})
+    messages = list(Message.objects.filter(chatroom=room_details.id))
+    messages = list(map(add_sender, messages))
+    print('These are messages!!', messages)
+    # print('This is Message!', list(messages)[0].sender)
+    return JsonResponse({"messages":list(messages)})
+
 

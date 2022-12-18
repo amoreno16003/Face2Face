@@ -6,7 +6,7 @@
   <h1>{{ username }}'s chatrooms:</h1>
   
   {% for chatroom in chatrooms %}
-  <a href="/getMessages/{{ chatroom.name }}">
+  <a href="/getMessages/{{ chatroom.id }}">
     <h3>{{ chatroom.name }}</h3>
   </a>
 </div>
