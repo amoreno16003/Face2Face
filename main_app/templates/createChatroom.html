@@ -6,34 +6,21 @@
 
 {% block content %}
 
-<div class='form'> 
+
+
+<div class="form login-box">
   <form id="post-form" method="POST" action="">
-      {% csrf_token %}
-      <label>Create a Chatroom or Join an Existing Chatroom</label>
-      {% comment %}Need to display existing chatrooms to choose from {% endcomment %}
+    {% csrf_token %}
+    <div class="user-box">
       <input type="text" name="chatroom" id="chatroom" width="100px" />
-      <input type="submit" value="Entering the Room">
+      <label>Creating Chatroom</label>
+    </div>
+      <span></span>
+      <span></span>
+        <a class="tag"><input class="enter" type="submit" value="Entering this Room"></a>
+
   </form>
 </div>
 
-<div class="login-box">
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Creating Chatroom</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="" required="">
-      <label>Existing Chatroom</label>
-    </div>
-    <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Entering...
-    </a>
-  </form>
-</div>
 
 {% endblock %}

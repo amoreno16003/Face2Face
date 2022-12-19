@@ -58,35 +58,37 @@ html {
   .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color: white;
     font-size: 12px;
   }
   
-  .login-box form a {
+  .login-box form a .enter{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #0380f4;
+    background-color: #b3acb3c9;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    border-style: none;
   }
   
-  .login-box a:hover {
-    background: #03e9f4;
-    color: #fff;
+  .login-box a:hover .enter:hover {
+    background: #036bf4;
+    color: rgba(255, 255, 255, 0.658);
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4;
+    box-shadow: 0 0 5px #036bf4,
+                0 0 25px #036bf4,
+                0 0 50px #036bf4,
+                0 0 100px #036bf4;
   }
   
-  .login-box a span {
+  .login-box a span .enter{
     position: absolute;
     display: block;
   }
@@ -164,4 +166,10 @@ html {
     50%,100% {
       bottom: 100%;
     }
+  }
+  .tag:hover {
+    background-color: rgb(125, 126, 126);
+    border-style: none;
+    border-radius: 50px;
+    
   }

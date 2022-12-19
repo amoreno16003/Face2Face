@@ -53,3 +53,12 @@ from django.test import TestCase
 # </div>
 
 # {% endblock %} -->
+
+@login_required
+def getMessages(request, chatroom_id):
+    room_details = get_object_or_404(Chatroom, pk=chatroom_id)
+    messagesQuerySet = Message.objects.filter(chatroom=room_details.id).values()
+
+    # print('printing room_details', room_details)
+    serialized_data = json.dumps(list(messagesQuerySet), cls=DjangoJSONEncoder)
+    return JsonResponse({'messages': serialized_data})
