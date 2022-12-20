@@ -84,8 +84,9 @@
                   "<div class='container darker'><b>" +
                   response.messages[key].text +
                   "</b><p>" +
+                  response.messages[key].sender +
                   "</p><span class='time-left'>" +
-                  response.messages[key].created_at.slice(0, 10) +
+                  response.messages[key].created_at.slice(0, 10)+
                   "</span></div>";
                 $("#display").append(displayMessage);
               }
