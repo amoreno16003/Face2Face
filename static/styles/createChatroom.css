@@ -1,11 +1,11 @@
-html {
+  html {
     height: 100%;
   }
+
   body {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    
   }
   
   .login-box {
@@ -59,14 +59,14 @@ html {
     top: -20px;
     left: 0;
     color: white;
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .login-box form a .enter{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #0380f4;
+    color: rgba(73, 43, 226, 0.825);
     background-color: #b3acb3c9;
     font-size: 16px;
     text-decoration: none;
@@ -79,13 +79,13 @@ html {
   }
   
   .login-box a:hover .enter:hover {
-    background: #036bf4;
+    background: rgba(73, 43, 226, 0.825);
     color: rgba(255, 255, 255, 0.658);
     border-radius: 5px;
-    box-shadow: 0 0 5px #036bf4,
-                0 0 25px #036bf4,
-                0 0 50px #036bf4,
-                0 0 100px #036bf4;
+    box-shadow: 0 0 5px rgba(73, 43, 226, 0.825),
+                0 0 25px rgba(73, 43, 226, 0.825),
+                0 0 50px rgba(73, 43, 226, 0.825),
+                0 0 100px rgba(73, 43, 226, 0.825);
   }
   
   .login-box a span .enter{
@@ -167,9 +167,18 @@ html {
       bottom: 100%;
     }
   }
+
   .tag:hover {
-    background-color: rgb(125, 126, 126);
+    background-color: rgba(73, 43, 226, 0.825);
     border-style: none;
     border-radius: 50px;
-    
   }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 400px;
+    margin-bottom: 50px;
+  } 

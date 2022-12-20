@@ -85,8 +85,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "face2face_db",
-
-
+        "HOST": "localhost",
+        "USER": "postgres",
+        "PASSWORD": "gk1126"
     }
 }
 
