@@ -3,6 +3,8 @@ const CHANNEL = sessionStorage.getItem('room')
 const TOKEN = sessionStorage.getItem('token')
 let UID = Number(sessionStorage.getItem('UID'))
 
+let NAME = sessionStorage.getItem('name')
+
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 let localTracks = []
 let remoteUsers = {}
@@ -20,7 +22,7 @@ let joinAndDisplayLocalStream = async () => {
     }
     catch(error){
         console.log("THE ERROR IS: ",error)
-        window.open('/', '_self')
+        // window.open('/', '_self')
     }
 
     // await client.join(APP_ID, CHANNEL, TOKEN, UID)
