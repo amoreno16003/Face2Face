@@ -207,56 +207,118 @@ def CreateMessage(request, chatroom):
 
 ```
 
-## Texting Chatroom 
-### Users are able to create a chatroom and/or join an existing chatrooms.
-#### New Chatroom - 
-  ##### Simply type a chatroom name within the input and select "entering this room"
-  ##### ![image](https://user-images.githubusercontent.com/107300143/208799407-89acbba6-8733-4c7e-a517-cf97eea662a6.png)
-#### Existing Chatroom - 
-  ##### Select the existing chatroom and it redirects to that page. 
-  ##### ![image](https://user-images.githubusercontent.com/107300143/208799497-6df28c0f-31be-4191-9529-fd83588ccd09.png)
-### Within the Chatroom 
-#### Chatroom Header and Room name
-  ##### ![image](https://user-images.githubusercontent.com/107300143/208799825-046a34e7-e786-4e11-a755-5235627d9d36.png)
-#### Chat text 
- ##### 1. Username 2. Texting message 3. Date of the message created
- ##### ![image](https://user-images.githubusercontent.com/107300143/208800140-10073eec-6edf-40be-8f22-609d554bb618.png)
-#### Sending the message
-  ##### ![image](https://user-images.githubusercontent.com/107300143/208800279-ece2c086-edc8-461d-951f-dce7773bf5ed.png)
+# Face2Face App
 
-#### ![image](https://user-images.githubusercontent.com/107300143/208800342-e9d2167a-d069-4152-9bd9-23d14bec611d.png)
+Visit Face2Face app website at: <a href=""> Face2Face</a>
+<hr />
 
-### Some notable codes
-#### Fetching Messages "GET"
-    <script>
-      $(document).ready(function () {
-        setInterval(function () {
-          $.ajax({
-            type: "GET",
-            url: "/getMessages/{{chatroom}}/",
-            success: function (response) {
-              console.log(response);
-              $("#display").empty();
-              for (let key in response.messages) {
-                let displayMessage =
-                  "<div class='padding-box box container darker'><b>" +
-                  response.messages[key].sender.toUpperCase() +
-                  "</b><p class='container font'>" +
-                   response.messages[key].text +
-                  "</p><span class='padding-box darker'>" +
-                  response.messages[key].created_at.slice(0, 10)+
-                  "</span></div>";
-                $("#display").append(displayMessage);
-              }
-            },
-            error: function (response) {
-              alert("Your message has not been sent, An Error");
-            },
-          });
-        }, 1000);
-      });
-    </script>
+## Getting Started
 
+<<<<<<< HEAD
+=======
+`1` `Fork` & `Clone` this repo to your local computer.
+
+`2` pip install packages
+```text
+pip3 install python-dotenv  
+pip3 install psycopg2  
+pip3 install agora_token_builder
+
+```
+<hr />
+
+## Languages & Technologies
+
+* `Django`
+* `Postgres`
+* Deployed to `Heroku`
+* Agora video streaming
+
+<hr />
+
+## WireFrame
+<img width="1239" alt="WireFrame" src="./static/imgs/Face2Face_Final.drawio.png">
+
+<hr />
+
+## User Stories
+
+* Face2Face allows users to create and join virtual meeting rooms where they can communicate with each other using video, audio and instant messaging. Additional future improvements include features that can give participants the ability to share their screen, share files, and use text chat within the meeting group or privately with others in the meeting.
+
+<hr />
+
+## App Pictures
+
+* Home Page
+<img width="782" alt="home page" src="./static/imgs/homepage.png">
+
+<br/>
+
+* Login
+<img width="969" alt="login" src="./static/imgs/login.png">
+
+<br/>
+
+* Create Chatroom
+<img width="969" alt="create chatroom" src="./static/imgs/createchatroom.png">
+
+<br/>
+
+* Video Chat Lobby
+<img width="797" alt="video chat lobby" src="./static/imgs/lobby.png">
+
+<br/>
+
+* Video Chat Stream
+<img width="797" alt="video chat stream" src="./static/imgs/videochatstream.png">
+
+<br/>
+
+* Profile
+<img width="797" alt="Profile" src="./static/imgs/profile.png">
+
+<br/>
+
+
+
+<hr />
+
+## API's used
+
+* Third party API: 
+<br/>
+<a href="https://www.agora.io/en/products/interactive-live-streaming/">Agora Video Streaming</a>
+<br/>
+
+### Models
+
+
+### URL Paths
+|url|view|
+|'' | views.index|
+|'chatroom/create/'| views.CreateChatroom|
+|'<str:chatroom>/update/'| views.edit_chatroom|
+|'<str:chatroom>/delete/'| views.delete_chatroom|
+|'<str:chatroom>/<str:member>/delete/'| views.delete_member|
+|'message/<str:chatroom>/create/'| views.CreateMessage|
+|'getMessages/<str:chatroom>/'| views.getMessages|
+|'user/<username>/'| views.profile|
+|'accounts/login/'| views.login_view|
+|'logout/'| views.logout_view|
+|'signup/'| views.signup_view|
+|'group/'| views.chatroom|
+|'about/'| views.about|
+|'contact/'| views.contact|
+|'room/'| views.room|
+|'lobby/'| views.lobby|
+|'get_token/'| views.getToken|
+
+### Code:
+```jsx
+
+```
+
+>>>>>>> 0f07f7d (chore: add readme)
 ## Developers 
 
 <div>
@@ -272,8 +334,14 @@ def CreateMessage(request, chatroom):
 
 # Face2Face Future Improvements:
 ```
+<<<<<<< HEAD
 - [ ] make chatrooms private
 - [ ] view all live video chats
 - [ ] save video chat history to database
 
 ```
+=======
+- [ ] Mark journeys as complete/expired after the date passes
+
+```
+>>>>>>> 0f07f7d (chore: add readme)
