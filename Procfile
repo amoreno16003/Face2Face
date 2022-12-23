@@ -1,1 +1,2 @@
-web: python3 manage.py runserver
+web: gunicorn face2face-us.wsgi
+release: python3 manage.py migrate
