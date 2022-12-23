@@ -10,10 +10,10 @@ python-dotenv = "*"
 psycopg2 = "*"
 agora_token_builder = "*"
 pipenv = "*"
-
+whitenoise = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
 [requires]
-
 python_full_version = "3.10.9"
