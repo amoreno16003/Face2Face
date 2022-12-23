@@ -9,10 +9,11 @@ django = "*"
 python-dotenv = "*"
 psycopg2 = "*"
 agora_token_builder = "*"
+pipenv = "*"
 
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
-python_full_version = "3.10.8"
+
+python_full_version = "3.10.9"
