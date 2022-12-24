@@ -41,7 +41,9 @@ body {
 
 .chatroom__container {
     /* background-color: rgba(0, 255, 221, 0.29); */
-    border: 2px solid rgb(255, 255, 255);
+    /* border: 2px solid rgb(255, 255, 255); */
+    /* background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%); */
     margin-left: auto;
     margin-right: auto;
     width: 200px;
@@ -50,8 +52,6 @@ body {
     border-radius: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);
     overflow: hidden; 
 
 }
@@ -67,17 +67,6 @@ body {
     text-decoration: underline;
 }
 
-/* .chat-create {
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(73, 43, 226, 0.825);
-    width: fit-content;
-    margin-top: 50px;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-} */
 
 .chatroom__btn {
     color: rgb(13, 0, 255);
@@ -226,7 +215,7 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
   margin-left: auto;
   margin-top:60px;
   margin-bottom: 50px;
-  background-image: url(../../static/imgs/f2f.png);
+  /* background-image: url(../../static/imgs/f2f.png); */
   background-position: center;
   background-size:cover;
   width: 400px;
@@ -274,7 +263,7 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 }
 
 .profile-img {
-    background-image: url(../../static/imgs/profile-img.png);
+    /* background-image: url(../../static/imgs/profile-img.png); */
     background-position: center;
     background-size: cover;
     width: 200px;
@@ -363,8 +352,33 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 }
 
 @keyframes logo {
-    from {background-image: none;}
-    to {background-image: url(../../static/imgs/f2f.png);}
+    /* 0%   {background-image: none;} */
+    0%  {background-image: url(../../static/imgs/f2f.png);
+    opacity: 0.2;}
+    100% {background-image: url(../../static/imgs/f2f.png)}
+}
+
+@keyframes profile-img {
+    /* 0%   {background-image: none;} */
+    0%  {background-image: url(../../static/imgs/profile-img.png);
+    opacity: 0.2;}
+    100%  {background-image: url(../../static/imgs/profile-img.png);
+}
+}
+
+@keyframes chatroom-container {
+    0% {opacity: 0.2;
+           /* background-color: rgba(0, 255, 221, 0.29); */
+           border: 2px solid rgb(255, 255, 255);
+           background: rgb(255,255,255);
+           background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);}
+    100% {
+        /* background-color: rgba(0, 255, 221, 0.29); */
+        border: 2px solid rgb(255, 255, 255);
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);
+    }
+
 }
 
 @keyframes links {
@@ -394,14 +408,36 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
     animation-duration: 5s;
 }
 
+.chatroom__container {
+    animation-name: chatroom-container;
+    animation-duration: 2s;
+    background-color: rgba(0, 255, 221, 0.29); 
+    border: 2px solid rgb(255, 255, 255);
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%); 
+}
+
 #contact {
     animation-name: contact_field;
     animation-duration: 2s;
 }
 
+
+.profile-img {
+    animation-name: profile-img;
+    animation-duration: 4s;
+    background-image: url(../../static/imgs/profile-img.png);
+} 
+
 #name {
     animation-name: contact_field;
     animation-duration: 5s;
+}
+
+.logo {
+    animation-name: logo;
+    animation-duration: 4s;
+    background-image: url(../../static/imgs/f2f.png)
 }
 
 #Email {
