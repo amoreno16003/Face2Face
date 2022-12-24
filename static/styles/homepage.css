@@ -17,6 +17,10 @@
     border-radius: 10px;
 }
 
+.about__title {
+    text-align: center;
+}
+
 .btn1 {
     text-decoration: none;
     padding-left: 20px;
