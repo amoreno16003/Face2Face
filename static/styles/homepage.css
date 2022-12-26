@@ -17,6 +17,10 @@
     border-radius: 10px;
 }
 
+.about__title {
+    text-align: center;
+}
+
 .btn1 {
     text-decoration: none;
     padding-left: 20px;
@@ -41,7 +45,9 @@ body {
 
 .chatroom__container {
     /* background-color: rgba(0, 255, 221, 0.29); */
-    border: 2px solid rgb(255, 255, 255);
+    /* border: 2px solid rgb(255, 255, 255); */
+    /* background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%); */
     margin-left: auto;
     margin-right: auto;
     width: 200px;
@@ -50,8 +56,6 @@ body {
     border-radius: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);
     overflow: hidden; 
 
 }
@@ -67,17 +71,6 @@ body {
     text-decoration: underline;
 }
 
-/* .chat-create {
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(73, 43, 226, 0.825);
-    width: fit-content;
-    margin-top: 50px;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-} */
 
 .chatroom__btn {
     color: rgb(13, 0, 255);
@@ -133,6 +126,9 @@ body {
     background-color: rgb(0, 205, 0, 5);
     color: black;
     font-style: italic;
+    -webkit-box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
+    box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 }
 
 .delete { 
@@ -223,7 +219,7 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
   margin-left: auto;
   margin-top:60px;
   margin-bottom: 50px;
-  background-image: url(../../static/imgs/f2f.png);
+  /* background-image: url(../../static/imgs/f2f.png); */
   background-position: center;
   background-size:cover;
   width: 400px;
@@ -271,7 +267,7 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 }
 
 .profile-img {
-    background-image: url(../../static/imgs/profile-img.png);
+    /* background-image: url(../../static/imgs/profile-img.png); */
     background-position: center;
     background-size: cover;
     width: 200px;
@@ -360,8 +356,33 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 }
 
 @keyframes logo {
-    from {background-image: none;}
-    to {background-image: url(../../static/imgs/f2f.png);}
+    /* 0%   {background-image: none;} */
+    0%  {background-image: url(../../static/imgs/f2f.png);
+    opacity: 0.2;}
+    100% {background-image: url(../../static/imgs/f2f.png)}
+}
+
+@keyframes profile-img {
+    /* 0%   {background-image: none;} */
+    0%  {background-image: url(../../static/imgs/profile-img.png);
+    opacity: 0.2;}
+    100%  {background-image: url(../../static/imgs/profile-img.png);
+}
+}
+
+@keyframes chatroom-container {
+    0% {opacity: 0.2;
+           /* background-color: rgba(0, 255, 221, 0.29); */
+           border: 2px solid rgb(255, 255, 255);
+           background: rgb(255,255,255);
+           background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);}
+    100% {
+        /* background-color: rgba(0, 255, 221, 0.29); */
+        border: 2px solid rgb(255, 255, 255);
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);
+    }
+
 }
 
 @keyframes links {
@@ -391,14 +412,36 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
     animation-duration: 5s;
 }
 
+.chatroom__container {
+    animation-name: chatroom-container;
+    animation-duration: 2s;
+    background-color: rgba(0, 255, 221, 0.29); 
+    border: 2px solid rgb(255, 255, 255);
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%); 
+}
+
 #contact {
     animation-name: contact_field;
     animation-duration: 2s;
 }
 
+
+.profile-img {
+    animation-name: profile-img;
+    animation-duration: 4s;
+    background-image: url(../../static/imgs/profile-img.png);
+} 
+
 #name {
     animation-name: contact_field;
     animation-duration: 5s;
+}
+
+.logo {
+    animation-name: logo;
+    animation-duration: 4s;
+    background-image: url(../../static/imgs/f2f.png)
 }
 
 #Email {
@@ -522,6 +565,59 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
     } */
 
     .about__content {
+        width: fit-content;
+        height: 300px;
+        text-align: start;
+        overflow-y: scroll;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+
+    }
+
+    p {
+        font-size: small;
+        font-weight: 300;
+        font-style: italic;
+        padding-right: 80px;
+    }
+
+    small {
+        padding-right: 60px;
+    }
+
+    /* .about__content {
+        text-align: center;
+        width: fit-content;
+        padding: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
+        
+    } */
+
+    .about__title {
+        padding-right: 10px;
+        color: blue;
+        text-align: start;
+    }
+
+    .profile-img {
+        background-image: url(../../static/imgs/profile-img.png);
+        background-position: center;
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0px 0px 14px 1px rgba(5,43,156,1);
+        -moz-box-shadow: 0px 0px 14px 1px rgba(5,43,156,1);
+        box-shadow: 0px 0px 14px 1px rgba(5,43,156,1);
+        border-radius: 20px;
+    } 
+
+    .about__content {
         text-align: center;
         padding-left: 25%;
         width: min-content;
@@ -540,17 +636,136 @@ box-shadow: 5px 5px 5px -2px rgba(0,0,0,1);
 
     .home__links {
         background-color: transparent;
+        width: 370px;
+        margin-left: 0;
+        padding-right: 10px;
+        background-color:rgba(11, 11, 213, .3);
     }
 
 
     .home__button__container {
-         padding-left: 20px;
-         background-color: rgba(90, 90, 107, 0);
+         padding: 0;
+
          position: relative;
          display: flex;
          justify-content: center;
-
+         margin-top: 10px;
+         padding-right: 0px;
     }
 
+    .btn1 {
+        padding: 0;
+        font-size: 8px;
+    }
 
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top:60px;
+        margin-bottom: 50px;
+        background-image: url(../../static/imgs/f2f.png);
+        background-position: center;
+        background-size:cover;
+        width: 200px;
+        height: 100px;
+      
+      } 
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .profile__rooms {
+        margin-top: 50px;
+        display: flex;
+        width: auto;
+    }
+    
+    .profile__room1 {
+        color: rgb(255, 255, 255);
+        border: 2px solid black;
+        height: 400px;
+        font-size: large;
+        text-align: center;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(87,87,87,1) 50%, rgba(0,0,0,0.7203475140056023) 100%);
+        margin-left: auto;
+        width: fit-content;
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow-y: scroll;
+        border-radius: 10px;
+        
+    }
+    .profile__room2 {
+        color: rgb(0, 0, 0);
+        border: 2px solid black;
+        height: 400px;
+        font-size: large;
+        text-align: center;
+        background-color: rgba(46, 46, 46, 0.4);
+        width: fit-content;
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        scrollbar-color: black;
+        border-radius: 10px;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    
+    .rooms__container {
+        background-color: rgb(0, 0, 0);
+    }
+    
+
+.delete { 
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 25%, rgba(249,249,249,1) 75%, rgba(255,0,0,1) 100%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 2px;
+    border: 2px solid black;
+    color: rgb(0, 0, 0);
+    width: 100px;
+}
+
+
+.edit {
+    color: rgb(0, 0, 0);
+    background: rgb(241,255,0);
+    background: linear-gradient(90deg, rgba(241,255,0,1) 0%, rgba(255,255,255,1) 25%, rgba(249,249,249,1) 75%, rgba(241,255,0,1) 100%);
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 2px;
+    width: 100px;
+}
+
+.join__chatroom__btn {
+    background: rgb(0,255,25);
+    background: linear-gradient(90deg, rgba(0,255,25,1) 0%, rgba(255,255,255,1) 25%, rgba(249,249,249,1) 75%, rgba(0,255,25,1) 100%);
+    border: 2px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    width: 100px;
+}
+
+.chatroom__container {
+    border: 2px solid rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    padding-left: 9px;
+    padding-right: 10px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(142,134,255,1) 100%);
+    overflow: hidden; 
+
+}
 }

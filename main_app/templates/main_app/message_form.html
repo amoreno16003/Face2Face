@@ -79,6 +79,7 @@
       .padding-box {
         text-align:justify
       }
+      
   
 
     </style>
@@ -167,6 +168,56 @@
         overflow-y: scroll;
         max-height: 500px;
       }
+      /* ================== Media Query small (phones) ====================== */
+
+/* ======================================================================= */
+@media screen and (max-width: 600px) {
+
+
+  .formBox {
+    background-color: #f2f2f2;
+    padding: 0px;
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  input[type="text"],
+        select {
+          width: 300px;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+          width: 300px;
+          background-color: #824caf;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          /* max-width: 400px; */
+          /* position: absolute;
+          left: 0%; */
+        }
+
+        input[type="submit"]:hover {
+          background-color: #456fa0;
+        }
+
+        div {
+          border-radius: 5px;
+          background-color: transparent;
+        }
+  
+
+
+}
 
  
       </style>
@@ -188,6 +239,7 @@
               id="chatroom_name"
               value="{{chatroom.name}}"
             />
+            <br/>
             <input class="send-box" type="submit" value="Send" />
           </div>
         </form>
