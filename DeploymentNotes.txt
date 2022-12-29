@@ -1,0 +1,13 @@
+Heroku deployment (Django)
+
+* Install pipenv 
+* Make sure Pipfile includes dependencies for the project
+* Make sure piplock.file is regenerated with pipenv lock (up to date)
+* Update requirements.txt: pip freeze > requirements.txt
+* Set up database on the heroku site with dynos and connect dyno to the app itself
+* Fix ginocorn web command to target proper app through the Procfile file
+* Make sure you only have python_full_version in the pipfile not python and python_full_version
+* Use SECRET_KEY = environ.get('SECRET_KEY') to get key isntead of config
+* Make sure to have allowed hosts: ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'face2face-us.herokuapp.com']
+* Set database url in settings.py: db_from_env = dj_database_url.config(conn_max_age=600) DATABASES['default'].update(db_from_env)
+* Make sure gunicorn has right app name in the Procfile
